@@ -11,11 +11,7 @@ const confirmAttendButtonHandler = async (event) => {
       window.location.pathname.split("/").length - 1
     ];
 
-<<<<<<< HEAD
-  const response = await fetch("/activities/attend", {
-=======
   const response = await fetch("/api/attend", {
->>>>>>> upstream/main
     method: "POST",
     body: JSON.stringify({
       activity_id: activityId,

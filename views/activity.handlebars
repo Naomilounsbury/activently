@@ -6,7 +6,7 @@
       <div class="card">
         <div class="card-content">
           <span class="card-title">{{activity.title}}</span>
-          <p id = "text" oninput="this.editor.update()">{{activity.description}}</p>
+          <p>{{{markdown_to_html activity.description}}}</p>
           <p>{{activity.user.username}}</p>
           {{#if activity.is_private}}{{else}}
             <p>{{activity.location}}</p>
@@ -95,9 +95,14 @@
       </div>
     </div>
   {{/if}}
+<<<<<<< HEAD
 
 <script src ="/javascript/attend.js"></script>
 <script src ="/javascript/decline.js"></script>
+=======
+<script src="/javascript/attend.js"></script>
+<script src="/javascript/decline.js"></script>
+>>>>>>> upstream/main
 {{#if (is_organizer user_id activity.user.id)}}
   <script src="/javascript/delete-activity.js"></script>
   <script src="/javascript/invite.js"></script>

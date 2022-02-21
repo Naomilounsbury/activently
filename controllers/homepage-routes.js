@@ -204,6 +204,8 @@ router.get("/activity/:id", withAuth, (req, res) => {
         activity: dbActivityData.get({ plain: true }),
         user_id: req.session.user_id,
         loggedIn: req.session.loggedIn,
+        attending_count: dbActivityData.attending.length,
+        seatsAvailable: dbActivityData.seats > dbActivityData.attending.length,
       });
     })
     .catch((err) => {
@@ -260,5 +262,18 @@ router.get(
       });
   }
 );
+router.post("/activities/attend", (req, res) => {
+  Attendance.create({
+    user_id: req.session.user_id,
+    activity_id: req.body.activity_id,
+  })
+    .then(() => {
+      res.render("activity");
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 module.exports = router;

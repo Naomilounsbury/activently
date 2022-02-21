@@ -100,6 +100,17 @@ const updateActivity = async (event) => {
     alert(response.statusText);
   }
 };
+function Editor(text) {
+  this.update = function () {
+    text.innerHTML = markdown.toHTML(text.value);
+  };
+  input.editor = this;
+  this.update();
+}
+const markdown = function () {
+  return document.getElementById("text");
+};
+
 
 document
   .querySelector("#edit-activity-form")

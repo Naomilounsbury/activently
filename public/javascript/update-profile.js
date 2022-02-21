@@ -53,6 +53,17 @@ document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".modal");
   var instances = M.Modal.init(elems, options);
 });
+ function Editor(input, preview) {
+   this.update = function () {
+     preview.innerHTML = markdown.toHTML(input.value);
+   };
+   input.editor = this;
+   this.update();
+ }
+const markdown = function (data) {
+  return document.getElementById(id);
+};
+new Editor($("text-input"), $("preview"));
 document
   .querySelector(".edit-profile-form")
   .addEventListener("submit", updateProfiles);

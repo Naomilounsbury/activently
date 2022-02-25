@@ -54,4 +54,4 @@ Here is a screenshot of it working.
 
 ## Questions
 
-If you have any questions please check out [my github](https://github.com/Naomilounsbury/activently)
+If you have any questions please check out [my github](https://github.com/Naomilounsbury/activently). Here is a link to the [project](https://still-peak-56139.herokuapp.com/)
